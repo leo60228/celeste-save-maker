@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import os
+
 def check_number(num, default = 0, min = None, max = None):
     try:
         int(num)
@@ -18,7 +20,7 @@ def check_number(num, default = 0, min = None, max = None):
 
 areas = ["Prologue", "Forsaken City", "Old Site", "Celestial Resort", "Golden Ridge", "Mirror Temple", "Reflection", "Summit", "Epilogue", "Core"]
 
-print("CELESTE SAVE MAKER v1.2\nMade by Pikzel (@pikzelgames)\nIf you have any questions regarding this tool, message Pikzel#6979 on Discord\n\nNote: Make sure to close Celeste before using this tool.\n")
+print("CELESTE SAVE MAKER v1.3\nMade by Pikzel (@pikzelgames)\nIf you have any questions regarding this tool, message Pikzel#6979 on Discord\n\nNote: Make sure to close Celeste before using this tool.\n")
 
 while True:
     operating_system_number = int(input("Which operating system are you using? (1: Windows, 2: macOS, 3: Linux): "))
@@ -38,7 +40,9 @@ if save_location == "":
     elif operating_system == "macOS":
         print("As this is an alpha build, we don't have the default path for macOS yet, but please PM Pikzel#6979 on Discord if you can tell us what it is :)")
     elif operating_system == "Linux":
-        save_location = "$HOME/.local/share/Celeste/Saves"
+        save_location = os.path.expanduser("~/.local/share/Celeste/Saves/")
+if save_location[-1] != os.sep:
+    save_location += os.sep
 if save_location[-1] != "\\":
     save_location += "\\"
 
@@ -123,7 +127,7 @@ if total_dashes == "":
 if check_number(total_dashes, 0, 0):
     total_dashes = "0"
 
-completed_areas = []
+completed_areas = [["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"], ["false", "false", "false"]]
 cassettes_collected = ["false", "false", "false", "false", "false", "false", "false", "false", "false", "false"]
 hearts_collected = ["false", "false", "false", "false", "false", "false", "false", "false", "false", "false"]
 for i in range(int(unlocked_areas) + 1):
@@ -191,7 +195,7 @@ for i in range(int(unlocked_areas) + 1):
                 if answer != "":
                     print("Invalid input, defaulting to false")
                 sublist[2] = "false"
-    completed_areas.append(sublist)
+    completed_areas[i] = sublist
 
 print("Processing...")
 

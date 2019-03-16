@@ -25,6 +25,12 @@ To-dos:
 Known Issues:
 - Doesn't allow access to Journal immediately
 
+Contributors:
+- @leo60228 on Discord: Linux porting
+
+v1.3 Changelog:
+- Fixed Linux support (big thanks to @leo60228 on Discord)
+
 v1.2 Changelog:
 - Added Linux support
 

@@ -1,4 +1,4 @@
-Celeste Save Maker (AKA Save File Corruptor™ (thanks @FlipKING78))
+Celeste Save Maker
 ==================
 Currently only supports Windows and Linux, although there are prompts that relate to macOS in the program.
 

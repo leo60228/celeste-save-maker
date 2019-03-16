@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def check_number(num, default = 0, min = None, max = None):
     try:
         int(num)
@@ -16,15 +18,17 @@ def check_number(num, default = 0, min = None, max = None):
 
 areas = ["Prologue", "Forsaken City", "Old Site", "Celestial Resort", "Golden Ridge", "Mirror Temple", "Reflection", "Summit", "Epilogue", "Core"]
 
-print("CELESTE SAVE MAKER v0.1\nMade by Pikzel (@pikzelgames)\nIf you have any questions regarding this tool, message Pikzel#6979 on Discord\n\nNote: Make sure to close Celeste before using this tool.\n")
+print("CELESTE SAVE MAKER v1.2\nMade by Pikzel (@pikzelgames)\nIf you have any questions regarding this tool, message Pikzel#6979 on Discord\n\nNote: Make sure to close Celeste before using this tool.\n")
 
 while True:
-    operating_system_number = int(input("Which operating system are you using? (1: Windows, 2: macOS): "))
-    if operating_system_number in [1, 2]:
+    operating_system_number = int(input("Which operating system are you using? (1: Windows, 2: macOS, 3: Linux): "))
+    if operating_system_number in [1, 2, 3]:
         if operating_system_number == 1:
             operating_system = "Windows"
         elif operating_system_number == 2:
             operating_system = "macOS"
+        elif operating_system_number == 3:
+            operating_system = "Linux"
         break
 
 save_location = input("Where is your saves folder located? (leave blank for default): ")
@@ -33,6 +37,8 @@ if save_location == "":
         save_location = "C:\\Program Files\\Steam\\steamapps\\common\\Celeste\\Saves\\"
     elif operating_system == "macOS":
         print("As this is an alpha build, we don't have the default path for macOS yet, but please PM Pikzel#6979 on Discord if you can tell us what it is :)")
+    elif operating_system == "Linux":
+        save_location = "$HOME/.local/share/Celeste/Saves"
 if save_location[-1] != "\\":
     save_location += "\\"
 
